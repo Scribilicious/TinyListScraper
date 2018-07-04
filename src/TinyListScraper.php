@@ -127,7 +127,7 @@ class TinyListScraper {
                     );
 
                     // Skip double content
-                    if ($sLastLink === $aResult['link']) {
+                    if ($sLastLink === $aResult['link'] || strpos($aResult['link'], 'http') !== 0) {
                         continue;
                     }
 
@@ -308,7 +308,7 @@ class TinyListScraper {
      * @param  array   $sData     the data
      * @return boolean            returns true when saved
      */
-    private function saveCache($sName, $sData) {
+    private function saveCache($sName, $aData) {
         if (!$this->sPathCache) {
             return false;
         }
@@ -318,7 +318,7 @@ class TinyListScraper {
         $handle = fopen($sFilename, 'w');
 
         if($handle !== FALSE) {
-            fwrite ($handle, json_encode($sData));
+            fwrite ($handle, json_encode($aData));
             fclose ($handle);
             return true;
         }
