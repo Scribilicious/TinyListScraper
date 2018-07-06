@@ -1,4 +1,12 @@
-TinyListScraper is an easy to use Page Scraper
+About
+============
+
+TinyListScraper is an easy to use page list scraper. Its main goal is to scrape news and search results. Some features are:
+
+- Caching of results.
+- Easy to maintain and expand scrapers.
+- Results contain a set of fields containing: title, link, image, text, intro text, author, source, date and tags.
+
 
 Requirements
 ============
@@ -85,3 +93,13 @@ $aSettings = array(
 Some important notes:
 {$SEARCH} should be in the place of the URL where the search string occures.
 The `DOMXPath` format is being used for finding elements. For more information check http://php.net/manual/de/class.domxpath.php
+
+
+Current Scrapers
+============
+
+- Mashable
+- Lifehacker
+- Verge
+- Gizmodo
+- Techcrunch
