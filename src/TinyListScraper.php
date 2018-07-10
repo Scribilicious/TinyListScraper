@@ -12,7 +12,6 @@ namespace TinyListScraper;
  * The Awesome Scraper
  */
 class TinyListScraper {
-    private $oXpath = null;
     public $aResults = array();
     public $sPathCache = false;
 
