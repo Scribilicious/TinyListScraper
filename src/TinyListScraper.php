@@ -12,6 +12,7 @@ namespace TinyListScraper;
  * The Awesome Scraper
  */
 class TinyListScraper {
+    private $oXpath = null;
     public $aResults = array();
     public $sPathCache = false;
 
@@ -58,6 +59,14 @@ class TinyListScraper {
             $aResults = array();
             foreach ($aScrapers as $sScraper) {
                 if ($aResult = $this->scrape($sScraper, $sSearch)) {
+                    foreach ($aResult as $iKey => $aValue) {
+                        if (
+                            $this->inSubArray($aResults, 'title', $aValue['title']) ||
+                            $this->inSubArray($aResults, 'text', $aValue['text'])
+                        ) {
+                            unset($aResult[$iKey]);
+                        }
+                    }
                     $aResults = array_merge($aResults, $aResult);
                 }
             }
@@ -320,6 +329,22 @@ class TinyListScraper {
             fwrite ($handle, json_encode($aData));
             fclose ($handle);
             return true;
+        }
+        return false;
+    }
+
+    /**
+     * Check if value exists in subarray
+     * @param  array    $aArray The array to search through
+     * @param  string   $sKey   The key of the subarray
+     * @param  string   $sValue The value to search for
+     * @return boolean          returns true if found
+     */
+    private function inSubArray($aArray, $sKey, $sValue) {
+        foreach ($aArray as $aValue) {
+            if ($aValue[$sKey] === $sValue) {
+                return true;
+            }
         }
         return false;
     }
