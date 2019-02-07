@@ -2,6 +2,13 @@
     "name": "scribilicious/tinylistscraper",
     "description": "TinyListScraper is an easy to use page list scraper. Its main goal is to scrape news and search results.",
     "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Jens Eldering",
+            "email": "jens@atecmedia.com",
+            "role": "Developer"
+        },
+    ]
     "license": "GPL-3.0",
     "require": {
         "php": "^5.6"
