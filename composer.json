@@ -14,7 +14,7 @@
         "php": "^5.6"
     },
     "autoload": {
-        "psr-4": { "TinyListScraper\": "src/" }
+        "psr-4": { "TinyListScraper\\": "src/" }
     },
     "archive": {
         "exclude": ["/demo"]
