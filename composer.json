@@ -8,5 +8,8 @@
     },
     "autoload": {
         "psr-4": { "TinyListScraper": "src/" }
+    },
+    "archive": {
+        "exclude": ["/demo"]
     }
 }
