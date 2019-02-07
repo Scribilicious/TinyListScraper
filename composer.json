@@ -8,7 +8,7 @@
             "email": "jens@atecmedia.com",
             "role": "Developer"
         },
-    ]
+    ],
     "license": "GPL-3.0",
     "require": {
         "php": "^5.6"
